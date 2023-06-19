@@ -1,10 +1,12 @@
 # Importing all necessary libraries
 import cv2
 import os
-from utils import *
+from ..utils.utils import *
 
 
 def video2img(args):
+    assert args.skip_frame is not None, "You must set skip_frame in arguments"
+
     # Read the video from specified path
     cam = cv2.VideoCapture(args.input)
     

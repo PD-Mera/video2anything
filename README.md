@@ -15,5 +15,5 @@ pip install -r requirements.txt
 Run specific file in `convertor`, for example
 
 ``` bash
-python video2img.py --input video/capture_0.avi --output video/capture_0_sf_10 --skip_frame 10
+python main.py --video2img --input video/capture_0.avi --output video/capture_0_sf_10 --skip_frame 10
 ```

@@ -6,6 +6,9 @@ video_ext = ['avi', 'mp4']
 gif_ext = ['gif']
 
 def video2gif(args):
+    assert args.fps is not None, "You must set fps in arguments"
+    assert args.height is not None, "You must set height in arguments, 0 for not resize"
+
     if args.input.split(".")[-1] not in video_ext:
         print(f"Input video file path error. Video file must end with {video_ext}")
         exit()
@@ -18,7 +21,7 @@ def video2gif(args):
 
     videoClip = VideoFileClip(args.input)
 
-    if args.height is not None:
+    if args.height != 0:
         videoClip = videoClip.resize(height=args.height)
 
     videoClip.write_gif(args.output, fps=args.fps)
